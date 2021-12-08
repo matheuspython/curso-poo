@@ -1,9 +1,48 @@
 public class Caneta {
-  String modelo;
-  String cor;
-  float ponta;
-  int carga;
-  boolean tampada;
+  private String modelo;
+  public String cor;
+  private float ponta;
+  protected int carga;
+  private boolean tampada;
+
+  public Caneta(String modelo, String cor, float ponta){
+    this.tampar();
+    this.cor = cor;
+    this.modelo = modelo;
+    this.ponta = ponta;
+  }
+  
+  public void setCarga(int carga) {
+    this.carga = carga;
+  }
+  public int getCarga() {
+    return carga;
+  }
+  public void setModelo(String modelo) {
+    this.modelo = modelo;
+  }
+  public String getModelo(){
+    return this.modelo;
+  }
+  public void setTampada(boolean tampada) {
+    this.tampada = tampada;
+  }
+  public boolean getTampada() {
+    return tampada;
+  }
+  public void setCor(String cor) {
+    this.cor = cor;
+  }
+  public String getCor() {
+    return cor;
+  }
+  public float getPonta(){
+    return this.ponta;
+  }
+  public void setPonta(float ponta) {
+    this.ponta = ponta;
+  }
+
 
   void staus() {
     String estaTampada;
@@ -21,7 +60,7 @@ public class Caneta {
     System.out.print("--------------------------");
   }
 
-  void rabiscar(){
+  public void rabiscar(){
     if(this.tampada){
     System.out.print("n da ela ta tampada \n");
     return; 
@@ -29,11 +68,11 @@ public class Caneta {
     System.out.print("Rabiscando \n");
   }
 
-  void tampar(){
+  public void tampar(){
     this.tampada = true;
   }
   
-  void destampar(){
+  public void destampar(){
     this.tampada = false;
   }
 }
